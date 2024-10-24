@@ -10,8 +10,8 @@ from models.database import db
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://postgres:taokopit105@localhost:2912/capstone')
-    # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+    # app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://postgres:taokopit105@localhost:2912/capstone')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
     migrate = Migrate(app, db)
