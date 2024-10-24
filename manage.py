@@ -1,16 +1,15 @@
-from flask import Flask
-from flask_migrate import Migrate
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
+
 from app import create_app
 from models.database import db 
 
-app = create_app()  # Create your Flask application instance
-migrate = Migrate(app, db)  # Setup Flask-Migrate
+app = create_app()
+migrate = Migrate(app, db)
+manager = Manager(app)
 
-@app.cli.command("db_upgrade")
-def db_upgrade():
-    """Run database migrations."""
-    from flask_migrate import upgrade
-    upgrade()
+manager.add_command('db', MigrateCommand)
 
-if __name__ == "__main__":
-    app.run()
+
+if __name__ == '__main__':
+    manager.run()
