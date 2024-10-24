@@ -21,6 +21,10 @@ def create_app(test_config=None):
 
     CORS(app)
 
+    @app.route('/')
+    def home():
+        return "Hello word!!!"
+
     # CORS Headers
     @app.after_request
     def after_request(response):
