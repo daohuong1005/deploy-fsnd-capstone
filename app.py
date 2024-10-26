@@ -40,7 +40,7 @@ def create_app(test_config=None):
     GET /movies
     Get all movies
 
-    Example Request: curl 'http://localhost:5000/movies'
+    Example Request: curl 'http://127.0.0.1:5000/movies'
 
     Expected Result:
     {
@@ -92,7 +92,7 @@ def create_app(test_config=None):
     GET /actors
     Get all actors
 
-    Example Request: curl 'http://localhost:5000/actors'
+    Example Request: curl 'http://127.0.0.1:5000/actors'
 
     Expected Result:
     {
@@ -138,7 +138,7 @@ def create_app(test_config=None):
     Requires the title and release date.
 
     Example Request: (Create)
-    curl --location --request POST 'http://localhost:5000/movies' \
+    curl --location --request POST 'http://127.0.0.1:5000/movies' \
         --header 'Content-Type: application/json' \
         --data-raw '{
             "title": "Pek Yakında",
@@ -179,7 +179,7 @@ def create_app(test_config=None):
     Requires the name, age and gender of the actor.
 
     Example Request: (Create)
-    curl --location --request POST 'http://localhost:5000/actors' \
+    curl --location --request POST 'http://127.0.0.1:5000/actors' \
         --header 'Content-Type: application/json' \
         --data-raw '{
             "name": "Cem Yılmaz",
@@ -220,7 +220,7 @@ def create_app(test_config=None):
     DELETE /movies/<int:movie_id>
     Deletes the movie with given id
 
-    Example Request: curl --request DELETE 'http://localhost:5000/movies/1'
+    Example Request: curl --request DELETE 'http://127.0.0.1:5000/movies/1'
 
     Example Response:
     {
@@ -247,7 +247,7 @@ def create_app(test_config=None):
     DELETE /actors/<int:actor_id>
     Deletes the actor with given id
 
-    Example Request: curl --request DELETE 'http://localhost:5000/actors/1'
+    Example Request: curl --request DELETE 'http://127.0.0.1:5000/actors/1'
 
     Example Response:
     {
@@ -277,7 +277,7 @@ def create_app(test_config=None):
         Update the corresponding fields for Movie with id <movie_id>
 
     Example Request:
-    curl --location --request PATCH 'http://localhost:5000/movies/1' \
+    curl --location --request PATCH 'http://127.0.0.1:5000/movies/1' \
         --header 'Content-Type: application/json' \
         --data-raw '{
             "title": "Eyvah eyvah 2"
@@ -330,7 +330,7 @@ def create_app(test_config=None):
         Update the given fields for Actor with id <actor_id>
 
     Example Request:
-    curl --location --request PATCH 'http://localhost:5000/actors/1' \
+    curl --location --request PATCH 'http://127.0.0.1:5000/actors/1' \
         --header 'Content-Type: application/json' \
         --data-raw '{
             "name": "Tom Hanks"
