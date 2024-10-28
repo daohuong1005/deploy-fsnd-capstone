@@ -10,7 +10,8 @@ from models.database import db
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://postgres:taokopit105@localhost:2912/capstone')
+    db_url = os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url
     # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
@@ -435,4 +436,5 @@ def create_app(test_config=None):
 APP = create_app()
 
 if __name__ == '__main__':
-    APP.run(host='0.0.0.0', port=8080, debug=True)
+    port = int(os.getenv("PORT", 5000))
+    APP.run(host='0.0.0.0', port=port, debug=True)
