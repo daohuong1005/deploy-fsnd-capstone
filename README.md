@@ -197,7 +197,7 @@ The API will return three error types when requests fail:
 
 * Require `view:movies` permission
 
-* **Example Request:** `curl 'http://localhost:5000/movies'`
+* **Example Request:** `curl 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//movies'`
 
 * **Expected Result:**
     ```json
@@ -242,7 +242,7 @@ The API will return three error types when requests fail:
 
 * Requires `view:actors` permission
 
-* **Example Request:** `curl 'http://localhost:5000/actors'`
+* **Example Request:** `curl 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//actors'`
 
 * **Expected Result:**
     ```json
@@ -283,7 +283,7 @@ The API will return three error types when requests fail:
 
 * **Example Request:** (Create)
     ```bash
-	curl --location --request POST 'http://localhost:5000/movies' \
+	curl --location --request POST 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//movies' \
 		--header 'Content-Type: application/json' \
 		--data-raw '{
 			"title": "Pek Yakında",
@@ -307,7 +307,7 @@ The API will return three error types when requests fail:
 
 * **Example Request:** (Create)
     ```json
-	curl --location --request POST 'http://localhost:5000/actors' \
+	curl --location --request POST 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//actors' \
 		--header 'Content-Type: application/json' \
 		--data-raw '{
 			"name": "Cem Yılmaz",
@@ -328,7 +328,7 @@ The API will return three error types when requests fail:
 
 * Require `delete:movies` permission
 
-* **Example Request:** `curl --request DELETE 'http://localhost:5000/movies/1'`
+* **Example Request:** `curl --request DELETE 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//movies/1'`
 
 * **Example Response:**
     ```json
@@ -343,7 +343,7 @@ The API will return three error types when requests fail:
 
 * Require `delete:actors` permission
 
-* **Example Request:** `curl --request DELETE 'http://localhost:5000/actors/1'`
+* **Example Request:** `curl --request DELETE 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//actors/1'`
 
 * **Example Response:**
     ```json
@@ -364,7 +364,7 @@ The API will return three error types when requests fail:
 
 * **Example Request:** 
 	```json
-    curl --location --request PATCH 'http://localhost:5000/movies/1' \
+    curl --location --request PATCH 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//movies/1' \
 		--header 'Content-Type: application/json' \
 		--data-raw '{
 			"title": "Eyvah eyvah 2"
@@ -394,7 +394,7 @@ The API will return three error types when requests fail:
 
 * **Example Request:** 
 	```json
-    curl --location --request PATCH 'http://localhost:5000/actors/1' \
+    curl --location --request PATCH 'https://deployheroku-udacity-5e832488f3f8.herokuapp.com//actors/1' \
 		--header 'Content-Type: application/json' \
 		--data-raw '{
 			"name": "Tom Hanks"
