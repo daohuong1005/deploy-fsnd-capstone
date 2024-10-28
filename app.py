@@ -10,7 +10,7 @@ from models.database import db
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL','postgresql://u243gbdi1ahaet:pfdd64cbebabbac9bb6224ec226bbe3b2bd823b90b9f86645c56c878d0c64aa49@c3gtj1dt5vh48j.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d63n0iq78mmump')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL').replace("postgres://", "postgresql://", 1)
     # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
